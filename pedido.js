@@ -48,3 +48,19 @@ console.log('Itens do pedido após remoção:', pedido.itens);
 console.log('Total do pedido:', pedido.calcularTotal());
 pedido.alterarStatus('Pronto para entrega');
 console.log('Novo status do pedido:', pedido.mostrarStatus(numeroPedidoBuscado));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
