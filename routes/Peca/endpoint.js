@@ -20,19 +20,19 @@ router.get('/:id', (req, res) => {
   });
 
   router.post('/', (req, res) => {
-    const { nome, ativo } = req.body;
-    const peca = Peca.criar(db.db.get('Peca'), id, nome, ativo);
+    const { nome, referencia } = req.body;
+    const peca = Peca.criar(db.db.get('Peca'), id, nome, referencia);
     res.status(201).json(Peca);
   });
 
   router.put('/:id', (req, res) => {
     const id = parseInt(req.params.id);
-    const { nome, ativo } = req.body;
-    const Peca = Peca.atualizar(db.db.get('Peca'), id, nome, ativo);
+    const { nome, referencia } = req.body;
+    const Peca = Peca.atualizar(db.db.get('Peca'), id, nome, referencia);
     if (Peca) {
       res.json(Peca);
     } else {
-      res.status(404).json({ message: 'Cliente não encontrado' });
+      res.status(404).json({ message: 'Peca não encontrada' });
     }
   });
 

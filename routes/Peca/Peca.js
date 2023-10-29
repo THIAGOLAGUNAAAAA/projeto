@@ -5,34 +5,34 @@ class Peca {
       this.referencia = referencia;
     }
 
-    static criar(pecas, id, nome, ) {
+    static criar(pecas, id, nome,referencia ) {
         const peca = new Peca(id, nome, referencia);
-        pecas.push(peca);
+        pecas.push(pecas);
         return peca;
       }
 
-      static listar(Peca) {
-        return Peca;
+      static listar(pecas) {
+        return pecas;
       }
 
-      static obter(Peca, id) {
-        return Peca.find((Peca) => Peca.id === id);
+      static obter(pecas, id) {
+        return pecas.find((pecas) => pecas.id === id);
       }
 
-      static atualizar(Peca, id, nome, ativo) {
-        const Peca = this.obter(Peca, id);
-        if (Peca) {
-          Peca.nome = nome;
-          Peca.ativo = ativo;
-          return Peca;
+      static atualizar(pecas, id, nome, referencia) {
+        const pecas = this.obter(pecas, id);
+        if (pecas) {
+          pecas.nome = nome;
+          pecas.referencia = referencia;
+          return pecas;
         }
         return null;
       }
 
-      static deletar(Peça, id) {
-        const index = Peca.findIndex((Peca) => Peca.id === id);
+      static deletar(pecas, id) {
+        const index = Peca.findIndex((pecas) => pecas.id === id);
         if (index !== -1) {
-          const PecaRemovido = Peca.splice(index, 1)[0];
+          const PecaRemovido = peca.splice(index, 1)[0];
           return PecaRemovido;
         }
         return null;
