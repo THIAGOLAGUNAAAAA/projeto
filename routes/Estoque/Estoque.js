@@ -6,9 +6,9 @@ class Estoque {
     }
 
     static criar(estoque, id, nome,referencia ) {
-        const estoque = new Estoque(id, nome, referencia);
-        estoque.push(estoque);
-        return estoque;
+        const estoques = new Estoque(id, nome, referencia);
+        estoque.push(estoques);
+        return estoques;
       }
 
       static listar(estoque) {
@@ -20,11 +20,11 @@ class Estoque {
       }
 
       static atualizar(estoque, id, nome, referencia) {
-        const estoque = this.obter(estoque, id);
-        if (estoque) {
-            estoque.nome = nome;
-            estoque.referencia = referencia;
-          return estoque;
+        const estoques = this.obter(estoque, id);
+        if (estoques) {
+            estoques.nome = nome;
+            estoques.referencia = referencia;
+          return estoques;
         }
         return null;
       }

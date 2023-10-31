@@ -1,13 +1,12 @@
 const express = require("express");
 const jsonServer = require("json-server");
 const app = express();
-const bodyParser = require("body-parser");
 const middlewares = jsonServer.defaults();
 
-const pecaRouter = require('./routes/Peca/endpoint')
-const estoqueRouter = require('./routes/Estoque/endpoint')
-const UsuariosRouter = require('./routes/Usuarios/endpoint')
-const permissaoRouter = require('./routes/Permissao/endpoint')
+const pecaRouter = require('./routes/Peca/endpoint');
+const estoqueRouter = require('./routes/Estoque/endpoint');
+const UsuariosRouter = require('./routes/Usuarios/endpoint');
+const permissaoRouter = require('./routes/Permissao/endpoint');
 
 
 app.use(express.json());

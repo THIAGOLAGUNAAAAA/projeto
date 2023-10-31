@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const jsonServer = require('json-server');
-const db = jsonServer.router('../../data/db.json');
+const db = jsonServer.router('data/db.json');
 const Permissao = require('./Permissao');
 
 router.get('/', (req, res) => {
@@ -45,3 +45,5 @@ router.get('/:id', (req, res) => {
       res.status(404).json({ message: 'Permissao não concedida' });
     }
   });
+
+  module.exports = router;

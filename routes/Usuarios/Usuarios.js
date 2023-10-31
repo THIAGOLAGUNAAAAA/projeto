@@ -20,11 +20,11 @@ class Usuarios {
       }
 
       static atualizar(usuarios, id, nome, senha) {
-        const usuarios = this.obter(usuarios, id,nome,senha);
-        if (usuarios) {
-            usuarios.nome = nome;
-            usuarios.senha = senha;
-          return usuarios;
+        const usuario = this.obter(usuarios, id,nome,senha);
+        if (usuario) {
+            usuario.nome = nome;
+            usuario.senha = senha;
+          return usuario;
         }
         return null;
       }

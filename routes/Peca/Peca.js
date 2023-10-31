@@ -20,11 +20,11 @@ class Peca {
       }
 
       static atualizar(pecas, id, nome, referencia) {
-        const pecas = this.obter(pecas, id);
-        if (pecas) {
-          pecas.nome = nome;
-          pecas.referencia = referencia;
-          return pecas;
+        const peca = this.obter(pecas, id);
+        if (peca) {
+          peca.nome = nome;
+          peca.referencia = referencia;
+          return peca;
         }
         return null;
       }
