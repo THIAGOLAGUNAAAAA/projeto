@@ -5,9 +5,8 @@ class Estoque {
       this.referencia = referencia;
     }
 
-    static criar(estoque, id, nome,referencia ) {
+    static criar(id, nome,referencia ) {
         const estoques = new Estoque(id, nome, referencia);
-        estoque.push(estoques);
         return estoques;
       }
 

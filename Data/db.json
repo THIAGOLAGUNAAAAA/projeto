@@ -1,6 +1,32 @@
 {
-    "Peca":[],
-    "Estoque": [],
-    "Usuarios": [],
-    "Permissao": []
+  "Peca": [],
+  "Estoque": [
+    {
+      "id": 1,
+      "nome": "estoque1",
+      "referencia": "abc123"
+    },
+    {
+      "id": 2,
+      "nome": "estoque1",
+      "referencia": "abc123"
+    },
+    {
+      "id": 3,
+      "nome": "estoque1",
+      "referencia": "abc123"
+    },
+    {
+      "id": 4,
+      "nome": "estoque1",
+      "referencia": "abc123"
+    },
+    {
+      "id": 5,
+      "nome": "estoque1",
+      "referencia": "abc123"
+    }
+  ],
+  "Usuarios": [],
+  "Permissao": []
 }
