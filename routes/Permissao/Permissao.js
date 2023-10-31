@@ -5,10 +5,9 @@ class Permissao {
       this.senha = senha;
     }
 
-    static criar(permissao, id, nome,senha) {
-        const permissoes = new Permissao(id, nome, senha);
-        permissoes.push(permissoes);
-        return permissoes;
+    static criar(id, nome,senha ) {
+      const permissao = new Permissao(id, nome, senha);
+      return permissao;
       }
 
       static listar(permissao) {
@@ -16,11 +15,11 @@ class Permissao {
       }
 
       static obter(permissao, id) {
-        return permissao.find((permissao) => usuarios.id === id);
+        return permissao.find((permissao) => permissao.id === id);
       }
 
       static atualizar(permissao, id, nome, senha) {
-        const permissoes = this.obter(usuarios, id,nome,senha);
+        const permissoes = this.obter(permissao, id,nome,senha);
         if (permissoes) {
             permissoes.nome = nome;
             permissoes.senha = senha;

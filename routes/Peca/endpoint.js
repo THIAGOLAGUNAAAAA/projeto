@@ -19,27 +19,35 @@ router.get('/:id', (req, res) => {
     }
   });
 
-  router.post('/', (req, res) => {
-    const { nome, referencia } = req.body;
-    const peca = Peca.criar(db.db.get('Peca'), id, nome, referencia);
-    res.status(201).json(Peca);
-  });
+  router.post("/", (req, res) => {
+    const {nome, referencia } = req.body;
+    const id = db.db.get('Peca').value() ? db.db.get('Peca').value().length + 1 : 1;
+    const novaPeca = Peca.criar(id, nome, referencia);
+    if (novaPeca) {
+        db.db.get("Peca").push(novaPeca).write();
+        res.status(201).json(novaPeca);
+    }
+    else {
+        res.status(500).json({ message: "Erro na inserção da Peca" });
+    }
+});
 
   router.put('/:id', (req, res) => {
     const id = parseInt(req.params.id);
     const { nome, referencia } = req.body;
-    const Peca = Peca.atualizar(db.db.get('Peca'), id, nome, referencia);
-    if (Peca) {
-      res.json(Peca);
+    const peca = Peca.atualizar(db.db.get('Peca').value(), id, nome, referencia);
+    if (peca) {
+      console.log(peca);
+      res.status(200).json(peca);
     } else {
-      res.status(404).json({ message: 'Peca não encontrada' });
+      res.status(200).json({ message: 'Peca não encontrada' });
     }
   });
 
   router.delete('/:id', (req, res) => {
     const id = parseInt(req.params.id);
-    const Peca = Peca.deletar(db.db.get('Peca'), id);
-    if (Peca) {
+    const peca = Peca.deletar(db.db.get('Peca'), id);
+    if (peca) {
       res.json({ message: 'Peca excluído com sucesso', Peca });
     } else {
       res.status(404).json({ message: 'Peca não encontrada' });

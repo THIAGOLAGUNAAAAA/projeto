@@ -5,10 +5,9 @@ class Peca {
       this.referencia = referencia;
     }
 
-    static criar(pecas, id, nome,referencia ) {
-        const peca = new Peca(id, nome, referencia);
-        pecas.push(pecas);
-        return peca;
+    static criar(id, nome,referencia ) {
+      const pecas = new Peca(id, nome, referencia);
+      return pecas;
       }
 
       static listar(pecas) {

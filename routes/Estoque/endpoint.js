@@ -46,8 +46,8 @@ router.get('/:id', (req, res) => {
 
   router.delete('/:id', (req, res) => {
     const id = parseInt(req.params.id);
-    const Estoque = Estoque.deletar(db.db.get('Estoque'), id);
-    if (Estoque) {
+    const estoque = Estoque.deletar(db.db.get('Estoque'), id);
+    if (estoque) {
       res.json({ message: 'Peça retirada do estoque', Estoque });
     } else {
       res.status(404).json({ message: 'Peca não encontrada no Estoque' });

@@ -5,10 +5,9 @@ class Usuarios {
       this.senha = senha;
     }
 
-    static criar(pecas, id, nome,senha) {
-        const usuarios = new Usuarios(id, nome, senha);
-        usuarios.push(usuarios);
-        return usuarios;
+    static criar(id, nome,senha ) {
+      const usuarios = new Usuarios(id, nome, senha);
+      return usuarios;
       }
 
       static listar(usuarios) {

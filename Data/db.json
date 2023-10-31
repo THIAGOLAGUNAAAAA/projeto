@@ -1,5 +1,26 @@
 {
-  "Peca": [],
+  "Peca": [
+    {
+      "id": 1,
+      "nome": "peca1",
+      "referencia": "abc123"
+    },
+    {
+      "id": 2,
+      "nome": "peca1",
+      "referencia": "abc123"
+    },
+    {
+      "id": 3,
+      "nome": "peca1",
+      "referencia": "abc123"
+    },
+    {
+      "id": 4,
+      "nome": "peca1",
+      "referencia": "abc123"
+    }
+  ],
   "Estoque": [
     {
       "id": 1,
@@ -25,8 +46,64 @@
       "id": 5,
       "nome": "estoque1",
       "referencia": "abc123"
+    },
+    {
+      "id": 1,
+      "nome": "Thiago",
+      "senha": "12345"
+    },
+    {
+      "id": 1,
+      "nome": "Thiago",
+      "senha": "12345"
+    },
+    {
+      "id": 1,
+      "nome": "Thiago",
+      "senha": "12345"
+    },
+    {
+      "id": 1,
+      "nome": "Thiago",
+      "senha": "12345"
+    },
+    {
+      "id": 1,
+      "nome": "Thiago",
+      "senha": "12345"
+    },
+    {
+      "id": 1,
+      "nome": "Thiago",
+      "senha": "12345"
     }
   ],
   "Usuarios": [],
-  "Permissao": []
+  "Permissao": [
+    {
+      "id": 1,
+      "nome": "Thiago",
+      "senha": "12345"
+    },
+    {
+      "id": 2,
+      "nome": "Thiago",
+      "senha": "12345"
+    },
+    {
+      "id": 3,
+      "nome": "Thiago",
+      "senha": "12345"
+    },
+    {
+      "id": 4,
+      "nome": "Thiago",
+      "senha": "12345"
+    },
+    {
+      "id": 5,
+      "nome": "Thiago",
+      "senha": "12345"
+    }
+  ]
 }
