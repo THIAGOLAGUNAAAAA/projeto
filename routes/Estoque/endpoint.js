@@ -5,15 +5,15 @@ const db = jsonServer.router('data/db.json');
 const Estoque = require('./Estoque');
 
 router.get('/', (req, res) => {
-  const estoque = Estoque.listar(db.db.get('Estoque'));
-  res.json(Estoque);
+  const estoque = Estoque.listar(db.db.get('Estoque').value());
+  res.json(estoque);
 });
 
 router.get('/:id', (req, res) => {
     const id = parseInt(req.params.id);
-    const estoque = Estoque.obter(db.db.get('Estoque'), id);
+    const estoque = Estoque.obter(db.db.get('Estoque').value(), id);
     if (estoque) {
-      res.json(Estoque);
+      res.json(estoque);
     } else {
       res.status(404).json({ message: 'Não há nada no Estoque' });
     }
@@ -46,7 +46,7 @@ router.get('/:id', (req, res) => {
 
   router.delete('/:id', (req, res) => {
     const id = parseInt(req.params.id);
-    const estoque = Estoque.deletar(db.db.get('Estoque'), id);
+    const estoque = Estoque.deletar(db.db.get('Estoque').value(), id);
     if (estoque) {
       res.json({ message: 'Peça retirada do estoque', Estoque });
     } else {

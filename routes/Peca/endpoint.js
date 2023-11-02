@@ -5,15 +5,15 @@ const db = jsonServer.router('data/db.json');
 const Peca = require('./Peca');
 
 router.get('/', (req, res) => {
-  const peca = Peca.listar(db.db.get('Peca'));
-  res.json(Peca);
+  const peca = Peca.listar(db.db.get('Peca').value());
+  res.json(peca);
 });
 
 router.get('/:id', (req, res) => {
     const id = parseInt(req.params.id);
-    const peca = Peca.obter(db.db.get('Peca'), id);
+    const peca = Peca.obter(db.db.get('Peca').value(), id);
     if (peca) {
-      res.json(Peca);
+      res.json(peca);
     } else {
       res.status(404).json({ message: 'Peca não encontrada' });
     }

@@ -29,7 +29,7 @@ class Permissao {
       }
 
       static deletar(permissao, id) {
-        const index = usuarios.findIndex((permissao) => permissao.id === id);
+        const index = permissao.findIndex((permissao) => permissao.id === id);
         if (index !== -1) {
           const permissaoRemovido = permissao.splice(index, 1)[0];
           return permissaoRemovido;

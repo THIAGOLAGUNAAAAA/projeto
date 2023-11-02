@@ -29,9 +29,9 @@ class Peca {
       }
 
       static deletar(pecas, id) {
-        const index = Peca.findIndex((pecas) => pecas.id === id);
+        const index = pecas.findIndex((pecas) => pecas.id === id);
         if (index !== -1) {
-          const PecaRemovido = peca.splice(index, 1)[0];
+          const PecaRemovido = pecas.splice(index, 1)[0];
           return PecaRemovido;
         }
         return null;

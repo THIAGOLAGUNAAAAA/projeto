@@ -5,15 +5,15 @@ const db = jsonServer.router('data/db.json');
 const Usuarios = require('./Usuarios');
 
 router.get('/', (req, res) => {
-  const usuarios = Usuarios.listar(db.db.get('Usuarios'));
-  res.json(Usuarios);
+  const usuarios = Usuarios.listar(db.db.get('Usuarios').value());
+  res.json(usuarios);
 });
 
 router.get('/:id', (req, res) => {
     const id = parseInt(req.params.id);
-    const usuarios = Usuarios.obter(db.db.get('Usuarios'), id);
+    const usuarios = Usuarios.obter(db.db.get('Usuarios').value(), id);
     if (usuarios) {
-      res.json(Usuarios);
+      res.json(usuarios);
     } else {
       res.status(404).json({ message: 'Usuario não esncontrado' });
     }
@@ -46,7 +46,7 @@ router.get('/:id', (req, res) => {
 
   router.delete('/:id', (req, res) => {
     const id = parseInt(req.params.id);
-    const usuarios = Usuarios.deletar(db.db.get('Usuarios'), id);
+    const usuarios = Usuarios.deletar(db.db.get('Usuarios').value(), id);
     if (usuarios) {
       res.json({ message: 'Usuario excluido com sucesso', Usuarios });
     } else {

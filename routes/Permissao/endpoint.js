@@ -5,13 +5,13 @@ const db = jsonServer.router('data/db.json');
 const Permissao = require('./Permissao');
 
 router.get('/', (req, res) => {
-  const permissao = Permissao.listar(db.db.get('Permissao'));
-  res.json(Permissao);
+  const permissao = Permissao.listar(db.db.get('Permissao').value());
+  res.json(permissao);
 });
 
 router.get('/:id', (req, res) => {
     const id = parseInt(req.params.id);
-    const permissao = Permissao.obter(db.db.get('Permissao'), id);
+    const permissao = Permissao.obter(db.db.get('Permissao').value(), id);
     if (permissao) {
       res.json(Permissao);
     } else {
@@ -48,9 +48,9 @@ router.get('/:id', (req, res) => {
     const id = parseInt(req.params.id);
     const permissao = Permissao.deletar(db.db.get('Permissao'), id);
     if (permissao) {
-      res.json({ message: 'Permissao concendida', Estoque });
+      res.json({ message: 'Permissao excluida', Estoque });
     } else {
-      res.status(404).json({ message: 'Permissao não concedida' });
+      res.status(404).json({ message: 'Permissao não encontrada' });
     }
   });
 
